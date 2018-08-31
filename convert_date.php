@@ -21,52 +21,54 @@
 			switch ($_POST['convert_type']) {
 				case "1": //11/02/2018 เป็น 11/02/2561
 					$str_ex=explode("/",$line);
-					$res.= $str_ex[0]."/".$str_ex[1]."/".(intval($str_ex[2])+543)."\n";
+					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT)
+					$res.= $day."/".$str_ex[1]."/".(intval($str_ex[2])+543)."\n";
 					break;
 				case "2" || "3": //11 กันยายน 2524 เป็น 11/09/2524
 					$str_ex=explode(" ",$line);
 					$month="";
 					switch ($str_ex[1]){
-						case "มกราคม":
+						case "มกราคม" || "ม.ค.":
 							$month="01";
 							break;
-						case "กุมภาพันธ์":
+						case "กุมภาพันธ์" || "ก.พ.":
 							$month="02";
 							break;
-						case "มีนาคม":
+						case "มีนาคม" || "มี.ค.":
 							$month="03";
 							break;
-						case "เมษายน":
+						case "เมษายน" || "เม.ย.":
 							$month="04";
 							break;
-						case "พฤษภาคม":
+						case "พฤษภาคม" || "พ.ค.":
 							$month="05";
 							break;
-						case "มิถุนายน":
+						case "มิถุนายน" || "มิ.ย.":
 							$month="06";
 							break;
-						case "กรกฎาคม":
+						case "กรกฎาคม" || "ก.ค.":
 							$month="07";
 							break;
-						case "สิงหาคม":
+						case "สิงหาคม" || "ส.ค.":
 							$month="08";
 							break;
 						case "กันยายน" || "ก.ย.":
 							$month="09";
 							break;
-						case "ตุลาคม":
+						case "ตุลาคม" || "ต.ค.":
 							$month="10";
 							break;
-						case "ตพฤศจิกายน":
+						case "พฤศจิกายน" || "พ.ย.":
 							$month="11";
 							break;
-						case "ธันวาคม":
+						case "ธันวาคม" || "ธ.ค.":
 							$month="12";
 							break;
 						default:
 							$month="00";
 					}
-					$res.= $str_ex[0]."/".$month."/".$str_ex[2]."\n";
+					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT)
+					$res.= $day."/".$month."/".$str_ex[2]."\n";
 					break;
 				default:
 					$icon="";
