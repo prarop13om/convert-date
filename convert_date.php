@@ -21,53 +21,99 @@
 			switch ($_POST['convert_type']) {
 				case "1": //11/02/2018 เป็น 11/02/2561
 					$str_ex=explode("/",$line);
-					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT)
+					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT);
 					$res.= $day."/".$str_ex[1]."/".(intval($str_ex[2])+543)."\n";
 					break;
-				case "2" || "3": //11 กันยายน 2524 เป็น 11/09/2524
+				case "2": //11 กันยายน 2524 เป็น 11/09/2524
 					$str_ex=explode(" ",$line);
 					$month="";
 					switch ($str_ex[1]){
-						case "มกราคม" || "ม.ค.":
+						case "มกราคม":
 							$month="01";
 							break;
-						case "กุมภาพันธ์" || "ก.พ.":
+						case "กุมภาพันธ์":
 							$month="02";
 							break;
-						case "มีนาคม" || "มี.ค.":
+						case "มีนาคม":
 							$month="03";
 							break;
-						case "เมษายน" || "เม.ย.":
+						case "เมษายน":
 							$month="04";
 							break;
-						case "พฤษภาคม" || "พ.ค.":
+						case "พฤษภาคม":
 							$month="05";
 							break;
-						case "มิถุนายน" || "มิ.ย.":
+						case "มิถุนายน":
 							$month="06";
 							break;
-						case "กรกฎาคม" || "ก.ค.":
+						case "กรกฎาคม":
 							$month="07";
 							break;
-						case "สิงหาคม" || "ส.ค.":
+						case "สิงหาคม":
 							$month="08";
 							break;
-						case "กันยายน" || "ก.ย.":
+						case "กันยายน":
 							$month="09";
 							break;
-						case "ตุลาคม" || "ต.ค.":
+						case "ตุลาคม":
 							$month="10";
 							break;
-						case "พฤศจิกายน" || "พ.ย.":
+						case "พฤศจิกายน":
 							$month="11";
 							break;
-						case "ธันวาคม" || "ธ.ค.":
+						case "ธันวาคม":
 							$month="12";
 							break;
 						default:
 							$month="00";
 					}
-					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT)
+					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT);
+					$res.= $day."/".$month."/".$str_ex[2]."\n";
+					break;
+				case "3": //11 ก.ย. 2550 เป็น 11/09/2550
+					$str_ex=explode(" ",$line);
+					$month="";
+					switch ($str_ex[1]){
+						case "ม.ค.":
+							$month="01";
+							break;
+						case "ก.พ.":
+							$month="02";
+							break;
+						case "มี.ค.":
+							$month="03";
+							break;
+						case "เม.ย.":
+							$month="04";
+							break;
+						case "พ.ค.":
+							$month="05";
+							break;
+						case "มิ.ย.":
+							$month="06";
+							break;
+						case "ก.ค.":
+							$month="07";
+							break;
+						case "ส.ค.":
+							$month="08";
+							break;
+						case "ก.ย.":
+							$month="09";
+							break;
+						case "ต.ค.":
+							$month="10";
+							break;
+						case "พ.ย.":
+							$month="11";
+							break;
+						case "ธ.ค.":
+							$month="12";
+							break;
+						default:
+							$month="00";
+					}
+					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT);
 					$res.= $day."/".$month."/".$str_ex[2]."\n";
 					break;
 				default:
