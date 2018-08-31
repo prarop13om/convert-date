@@ -51,9 +51,9 @@
 	
 		Select Type :
 		<select id="convert_type" name="convert_type">
-			<option value="1">11/02/2018 เป็น 11/02/2561</option>
-			<option value="2">11 กันยายน 2524 เป็น 11/09/2524</option>
-			<option value="3">11 ก.ย. 2550 เป็น 11/09/2550</option>
+			<option value="1">11/02/2018 -> 11/02/2561</option>
+			<option value="2">11 กันยายน 2524 -> 11/09/2524</option>
+			<option value="3">11 ก.ย. 2550  -> 11/09/2550</option>
 		</select>
 		
 		<button id="btn_submit" type="button">Convert</button>
