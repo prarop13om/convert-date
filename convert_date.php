@@ -22,7 +22,7 @@
 				case "1": //11/02/2018 เป็น 11/02/2561
 					$str_ex=explode("/",$line);
 					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT);
-					$res.= $day."/".$str_ex[1]."/".(intval($str_ex[2])+543)."\n";
+					$res.= trim($day."/".$str_ex[1]."/".(intval($str_ex[2])+543))."\n";
 					break;
 				case "2": //11 กันยายน 2524 เป็น 11/09/2524
 					$str_ex=explode(" ",$line);
@@ -68,7 +68,7 @@
 							$month="00";
 					}
 					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT);
-					$res.= $day."/".$month."/".$str_ex[2]."\n";
+					$res.= trim($day."/".$month."/".$str_ex[2])."\n";
 					break;
 				case "3": //11 ก.ย. 2550 เป็น 11/09/2550
 					$str_ex=explode(" ",$line);
@@ -114,7 +114,7 @@
 							$month="00";
 					}
 					$day=str_pad($str_ex[0],2,"0",STR_PAD_LEFT);
-					$res.= $day."/".$month."/".$str_ex[2]."\n";
+					$res.= trim($day."/".$month."/".$str_ex[2])."\n";
 					break;
 				default:
 					$icon="";
